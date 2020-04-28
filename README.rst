@@ -14,21 +14,33 @@ Installation:
 
 .. code-block:: shell-session
 
-    # 1) install stt-openapi-signer
     pip install stt-openapi-signer
 
 
 Usage:
 
+
 .. code-block:: python
 
     from stt.openapi.signer import sign
+    import requests
 
-    api_key = 'key1'
-    api_secret = 'AIKi/X7lvfu0haz0SttdbCj+nXmWBt/jfrbPAHRjwNHq'
-    params = 'test-params'
-    
+    # STT Open API Parameters
+    broker_id = '0XX' # Broker ID
+    app_code = '<you_service_code>'
+    api_key = '<your_api_key>'
+    api_secret = '<your_api_secret>'
+    params = ''
+
+    # Sign it
     signature, timestamp = sign(api_key, api_secret, params)
-    # print (signature, timestamp)
-   
+    
+    # Use it
+    url = 'http://open-api.settrade.com/api/oam/v1/{}/broker-apps/{}/login'.format(broker_id, app_code)
+    resp = requests.post(url, json={
+        "apiKey": api_key,
+        "params": params,
+        "signature": signature,
+        "timestamp": timestamp
+    }
    
