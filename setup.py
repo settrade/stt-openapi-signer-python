@@ -5,7 +5,7 @@ setup(
     version='0.0.1',
     description='Settrade OpenAPI parameters signer',
     license='MIT',
-    packages=['stt.openapi.signer'],
+    packages=['stt.openapi'],
     author='Theerapat Chawannakul',
     author_email='theerapatcha@gmail.com',
     keywords=['settrade', 'STT', 'openapi', 'api'],

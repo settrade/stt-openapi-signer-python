@@ -8,8 +8,9 @@ import time
 cv = Curve.get_curve('secp256r1')
 
 
-def sign(api_key, api_secret, params):
-    timestamp = __currentTimestamp()
+def sign(api_key, api_secret, params, timestamp=None):
+    if timestamp is None:
+        timestamp = __currentTimestamp()
     payload = __composePayload(api_key, params, timestamp)
     hashed_payload = hashlib.sha256(payload.encode("UTF-8")).hexdigest()
 
