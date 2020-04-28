@@ -9,5 +9,8 @@ setup(
     author='Theerapat Chawannakul',
     author_email='theerapatcha@gmail.com',
     keywords=['settrade', 'STT', 'openapi', 'api'],
-    url='https://github.com/bgse/hellostackoverflow'
+    install_requires=[
+        'ECPy>=1.0.0'
+    ],
+    url='https://github.com/theerapatcha/stt-openapi-signer-python'
 )
