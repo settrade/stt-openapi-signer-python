@@ -53,7 +53,7 @@ def main():
 
     signature, timestamp = sign(api_key=api_key, api_secret=api_secret,
                                 params=params, timestamp=timestamp)
-    print(signature, timestamp)
+    print("{} {}".format(signature, timestamp))
 
 
 if __name__ == "__main__":
