@@ -15,8 +15,6 @@ setup(
     author='Theerapat Chawannakul',
     author_email='theerapatcha@gmail.com',
     keywords=['settrade', 'STT', 'openapi', 'api'],
-    install_requires=[
-        'ECPy>=1.0.0'
-    ],
+    install_requires=install_requires,
     url='https://github.com/theerapatcha/stt-openapi-signer-python'
 )
