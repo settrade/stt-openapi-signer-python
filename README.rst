@@ -50,9 +50,11 @@ Python:
         "timestamp": timestamp
     }
    
-CLI:
+CLI: 
+
+`python -m stt.openapi.signer "<your_api_key>" "<your_api_secret>" "<your_params>" [<your_timestamp>]`
 
 .. code-block:: shell-session
 
-    $ python -m stt.openapi.signer "<your_api_key>" "<your_api_secret>" "<your_params>" [<your_timestamp>]
-    $ 3044022076edd40a9b92fe4435f3f1c42eac4ef858c395de81169ae2577d31637bd0a34f02207f98ddc8e4d22fbd3a11216cd4e76139d3f212f18e9bd36520db90f7d9a91869 1588136696131
+    $ python -m stt.openapi.signer key1 "AIKi/X7lvfu0haz0SttdbCj+nXmWBt/jfrbPAHRjwNHq" ""
+    $ 3045022041e4ffdf2ccb366b00a7b1c8983a39a71065c1506d696afa3701a61328d2fe860221009075dd373cd35ce14c610eb9a7ba7f84ff84f4848cde237debefddc300dca0fe 1588137026555
