@@ -1,4 +1,10 @@
+import sys
 from setuptools import setup
+
+if sys.version_info >= (3, 0):
+    install_requires = ["ECPy >= 1.0.0"]
+else:
+    install_requires = ["ECPy == 0.8.0"]
 
 setup(
     name='stt-openapi-signer',

@@ -27,6 +27,7 @@ Usage:
 
 .. code-block:: python
 
+    ## Python 3.x ##
     from stt.openapi.signer import sign
     import requests
 
