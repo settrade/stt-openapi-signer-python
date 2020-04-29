@@ -24,7 +24,7 @@ Installation
 Usage
 -----
 
-Python: 
+Python Example: 
 
 .. code-block:: python
 
@@ -52,7 +52,11 @@ Python:
    
 CLI: 
 
-`python -m stt.openapi.signer "<your_api_key>" "<your_api_secret>" "<your_params>" [<your_timestamp>]`
+.. code-block:: shell-session
+    
+    python -m stt.openapi.signer "<your_api_key>" "<your_api_secret>" "<your_params>" [<your_timestamp>]
+
+CLI Example:
 
 .. code-block:: shell-session
 
