@@ -7,6 +7,7 @@ from ecpy.keys import ECPublicKey, ECPrivateKey
 from ecpy.ecdsa import ECDSA
 import base64
 import hashlib
+import binascii
 
 
 class SignerTest(TestCase):
@@ -33,13 +34,14 @@ class SignerTest(TestCase):
     def __verifyUsingPublicKey(self, signature, api_key, params, timestamp, public_key):
         signer = ECDSA()
         pu_bytes = base64.b64decode(public_key)
-        x = int.from_bytes(pu_bytes[1:33], byteorder='big')
-        y = int.from_bytes(pu_bytes[33:], byteorder='big')
+        # int(pu_bytes[1:33].encode('hex'), 16)
+        x = int(binascii.hexlify(pu_bytes[1:33]), 16)
+        y = int(binascii.hexlify(pu_bytes[33:]), 16)
         pu_key = ECPublicKey(Point(x, y, cv))
         hashed = hashlib.sha256(
             "{}.{}.{}".format(api_key, params, timestamp).encode("UTF-8")).hexdigest()
 
         return signer.verify(
-            bytes.fromhex(hashed),
-            bytes.fromhex(signature),
+            bytearray.fromhex(hashed),
+            bytearray.fromhex(signature),
             pu_key)

@@ -4,6 +4,7 @@ from ecpy.ecdsa import ECDSA
 import base64
 import hashlib
 import time
+import binascii
 
 cv = Curve.get_curve('secp256r1')
 
@@ -14,19 +15,21 @@ def sign(api_key, api_secret, params, timestamp=None):
     payload = __composePayload(api_key, params, timestamp)
     hashed_payload = hashlib.sha256(payload.encode("UTF-8")).hexdigest()
 
-    pv_key = ECPrivateKey(int(base64.b64decode(api_secret).hex(), 16), cv)
-    signature = ECDSA().sign(bytes.fromhex(hashed_payload), pv_key).hex()
-    return signature, timestamp
+    pv_key = ECPrivateKey(
+        int(binascii.hexlify(base64.b64decode(api_secret)), 16), cv)
+    signature_bytes = ECDSA().sign(bytearray.fromhex(hashed_payload), pv_key)
+    return binascii.hexlify(signature_bytes).decode("UTF-8"), timestamp
 
 
 def verify(api_key, api_secret, params, signature, timestamp):
     payload = __composePayload(api_key, params, timestamp)
-    pv_key = ECPrivateKey(int(base64.b64decode(api_secret).hex(), 16), cv)
+    pv_key = ECPrivateKey(
+        int(binascii.hexlify(base64.b64decode(api_secret)), 16), cv)
     hashed_payload = hashlib.sha256(payload.encode("UTF-8")).hexdigest()
 
     return ECDSA().verify(
-        bytes.fromhex(hashed_payload),
-        bytes.fromhex(signature),
+        bytearray.fromhex(hashed_payload),
+        bytearray.fromhex(signature),
         pv_key.get_public_key())
 
 
