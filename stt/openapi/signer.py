@@ -46,7 +46,6 @@ def main():
     api_key = sys.argv[1]
     api_secret = sys.argv[2]
     params = sys.argv[3]
-    print(len(sys.argv))
     if len(sys.argv) > 4:
         timestamp = sys.argv[4]
     else:
