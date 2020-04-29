@@ -19,7 +19,7 @@ Installation:
 
 .. code-block:: shell-session
 
-    pip install stt-openapi-signer
+    pip install -U git+https://github.com/theerapatcha/stt-openapi-signer-python
 
 
 Usage:
@@ -27,7 +27,6 @@ Usage:
 
 .. code-block:: python
 
-    ## Python 3.x ##
     from stt.openapi.signer import sign
     import requests
 
