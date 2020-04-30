@@ -18,7 +18,7 @@ Installation
 
 .. code-block:: shell-session
 
-    pip install -U git+https://github.com/theerapatcha/stt-openapi-signer-python
+    pip install -U git+https://github.com/settrade/stt-openapi-signer-python
 
 
 Usage
