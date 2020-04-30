@@ -1,9 +1,9 @@
 Settrade OpenAPI parameters signer
 ====================================
-.. image:: https://travis-ci.org/theerapatcha/stt-openapi-signer-python.svg?branch=master
-   :target: https://travis-ci.org/theerapatcha/stt-openapi-signer-python/builds
-.. image:: https://codecov.io/gh/theerapatcha/stt-openapi-signer-python/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/theerapatcha/stt-openapi-signer-python
+.. image:: https://travis-ci.org/settrade/stt-openapi-signer-python.svg?branch=master
+   :target: https://travis-ci.org/settrade/stt-openapi-signer-python/builds
+.. image:: https://codecov.io/gh/settrade/stt-openapi-signer-python/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/settrade/stt-openapi-signer-python
 
 
 Overview
